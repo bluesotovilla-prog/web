@@ -1,0 +1,974 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #f5f5f5;
+    color: #333;
+    transition: background .3s, color .3s;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 55px;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    transition: .25s;
+    font-weight: 500;
+}
+
+.navbar a:hover{
+    color: #ffcc00;
+    transform: translateY(-2px);
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ---------------- HERO ---------------- */
+.hero{
+    height: 85vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.85)),
+    url("https://source.unsplash.com/1600x900/?technology,tech,future") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero h1{
+    font-size: 52px;
+    text-shadow: 0 4px 12px rgba(0,0,0,.7);
+}
+
+.hero p{
+    font-size: 22px;
+    opacity: .9;
+    margin: 15px 0;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* BOTÓN PRINCIPAL */
+.btn{
+    background: #ffcc00;
+    color: #111;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.btn:hover{
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* ---------------- SERVICIOS ---------------- */
+/* ================================
+   🔥 NUEVO DISEÑO DE SERVICIOS
+   ================================ */
+
+.servicios{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.servicios h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #222;
+    position: relative;
+}
+
+.servicios h2::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #ffcc00;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 10px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 35px;
+    padding: 20px;
+}
+
+/* Tarjetas estilo Glassmorphism */
+.card{
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.dark-mode .card{
+    background: rgba(40, 40, 40, 0.65);
+    border: 1px solid rgba(80,80,80,0.4);
+    color: #fff;
+}
+
+/* Imagen */
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Títulos */
+.card h3{
+    margin-top: 15px;
+    font-size: 22px;
+    color: #111;
+    transition: 0.3s;
+}
+
+.dark-mode .card h3{
+    color: #fff;
+}
+
+/* Descripción */
+.card p{
+    font-size: 15px;
+    margin-top: 8px;
+    color: #555;
+}
+
+.dark-mode .card p{
+    color: #ddd;
+}
+
+/* Hover con efecto “levitación” */
+.card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,.22);
+    border-color: #ffcc00;
+}
+
+.card:hover h3{
+    color: #ffcc00;
+}
+
+
+/* ---------------- SOBRE MÍ ---------------- */
+.sobre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre img{
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.sobre-contenido{
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ---------------- CONTACTO ---------------- */
+.contacto{
+    background: #111;
+    padding: 60px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto input,
+.contacto textarea{
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: #fff;
+}
+
+button{
+    background: #ffcc00;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .3s;
+}
+
+button:hover{
+    background: #fff;
+    color: #111;
+    transform: scale(1.05);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,.25);
+}
+
+/* ---------------- BOTÓN MODO OSCURO ---------------- */
+.dark-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 3000;
+    transition: .3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+
+.dark-btn:hover{
+    background: #ffcc00;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ---------------- MODO OSCURO ---------------- */
+.dark-mode{
+    background: #0d0d0d !important;
+    color: #f1f1f1 !important;
+}
+
+.dark-mode .navbar{
+    background: rgba(0,0,0,0.9) !important;
+}
+
+.dark-mode .card{
+    background: #1b1b1b !important;
+    color: #fff !important;
+}
+
+.dark-mode footer{
+    background: #000 !important;
+}
+
+.dark-mode input,
+.dark-mode textarea{
+    background: #222 !important;
+    color: #fff !important;
+}
+
+/* ------ FIX MODO OSCURO PARA ELEMENTOS PRINCIPALES ------ */
+
+.dark-mode .hero {
+    background: linear-gradient(#000000aa, #000000aa), 
+                url("https://source.unsplash.com/1600x900/?technology") center/cover no-repeat !important;
+}
+
+.dark-mode .card {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+}
+
+.dark-mode .sobre-contenido {
+    color: #fff !important;
+}
+
+.dark-mode .sobre img{
+    filter: brightness(0.8);
+}
+
+.dark-mode .contacto {
+    background: #000 !important;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background: #222 !important;
+    color: #fff !important;
+}
+
+.dark-mode footer {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.dark-mode .social-icons a {
+    color: #ffcc00 !important;
+}
+
+/* ---------------- MENÚ RESPONSIVE ---------------- */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        padding: 18px 25px;
+    }
+
+    .navbar ul{
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background: #111;
+        padding: 25px;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border-radius: 12px;
+        width: 65%;
+        box-shadow: 0 4px 15px rgba(0,0,0,.25);
+    }
+
+    .navbar ul.active{
+        display: flex;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+}
+
+/* ================================
+   ✨ DISEÑO MEJORADO SOLO PARA SERVICIOS
+   ================================ */
+
+.servicios {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* Contenedor de tarjetas */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjeta mejorada */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: .3s;
+    border: 1px solid #e0e0e0;
+
+    /* Animación SLIDE solo para servicios */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp .7s ease forwards;
+}
+
+/* Animación HOLO profesional */
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Entrada en secuencia */
+.cards .card:nth-child(1){ animation-delay: .15s; }
+.cards .card:nth-child(2){ animation-delay: .3s; }
+.cards .card:nth-child(3){ animation-delay: .45s; }
+.cards .card:nth-child(4){ animation-delay: .6s; }
+.cards .card:nth-child(5){ animation-delay: .75s; }
+.cards .card:nth-child(6){ animation-delay: .9s; }
+
+/* Animación */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- SOBRE NOSOTROS MEJORADO ---------- */
+.sobre {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.sobre p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.dark-mode .sobre p {
+    color: #ddd;
+}
+
+/* ---------- CONTACTO MEJORADO ---------- */
+.contacto {
+    padding: 80px 20px;
+}
+
+.contacto h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.contacto form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+.dark-mode .contacto form {
+    background: #1c1c1c;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.07);
+}
+
+/* --- Estilo de redes sociales con fondo negro --- */
+.footer-social {
+    background: #000;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-social h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.footer-icons a img {
+    width: 35px;
+    height: 35px;
+    opacity: 0.85;
+    transition: 0.3s ease;
+    filter: invert(1); /* hace blancos los íconos */
+}
+
+.footer-icons a img:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Modo oscuro */
+.dark-mode .footer-social {
+    background: #000;
+}
+
+/* ================================
+   ESTILO PARA LAS PÁGINAS DE SERVICIOS
+   ================================ */
+
+.servicio-info {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn .8s ease;
+}
+
+.servicio-info h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.servicio-info img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+.servicio-info p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* BOTÓN DE REGRESO */
+.btn-regresar {
+    display: inline-block;
+    background: #ffcc00;
+    padding: 14px 24px;
+    border-radius: 12px;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.btn-regresar:hover {
+    background: #fff;
+    transform: scale(1.06);
+}
+
+/* MODO OSCURO */
+.dark-mode .servicio-info h1 {
+    color: #fff;
+}
+
+.dark-mode .servicio-info p {
+    color: #ddd;
+}
+
+.dark-mode .servicio-info img {
+    box-shadow: 0 6px 25px rgba(255,255,255,0.1);
+}
+
+.dark-mode .btn-regresar {
+    background: #ffcc00;
+    color: #111;
+}
+
+/* ---- HERO MEJORADO ---- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 120px auto 80px;
+    padding: 40px;
+    gap: 40px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(255,200,0,0.07), rgba(255,255,255,0.03));
+    backdrop-filter: blur(8px);
+}
+
+/* TÍTULO */
+.titulo-hero {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(255,200,0,0.25);
+}
+
+.resaltado {
+    color: #ffc400;
+}
+
+/* DESCRIPCIÓN */
+.hero-descripcion {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin: 20px 0;
+    opacity: 0.9;
+}
+
+/* BOTÓN */
+.btn-principal {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #ffc400;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    transition: .3s;
+    box-shadow: 0 0 15px rgba(255,200,0,0.4);
+}
+
+.btn-principal:hover {
+    background: #ffe061;
+    transform: translateY(-3px);
+}
+
+/* IMAGEN HERO */
+.hero-img img {
+    width: 420px;
+    border-radius: 25px;
+    filter: drop-shadow(0 0 18px rgba(255,200,0,0.35));
+}
+
+/* ANIMACIÓN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 300px;
+    }
+
+    .titulo-hero {
+        font-size: 2.3rem;
+    }
+}
+
+/* ==============================
+   🌙 MODO OSCURO GLOBAL
+   ============================== */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+/* NAVBAR */
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .navbar a {
+    color: #ffffff;
+}
+
+/* SECCIONES */
+body.dark-mode section {
+    background-color: #181818;
+}
+
+/* TARJETAS PRODUCTOS */
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .card h3,
+body.dark-mode .card p {
+    color: #ffffff;
+}
+
+/* PÁGINAS DE PRODUCTO (DETALLE) */
+body.dark-mode .servicio-info {
+    background-color: #1b1b1b;
+}
+
+body.dark-mode .servicio-info h1 {
+    color: #00c6ff;
+}
+
+body.dark-mode .servicio-info p {
+    color: #dddddd;
+}
+
+/* BOTÓN REGRESAR */
+body.dark-mode .btn-regresar {
+    background-color: #00c6ff;
+    color: #000;
+}
+
+body.dark-mode .btn-regresar:hover {
+    background-color: #009edb;
+}
+
+/* FOOTER */
+body.dark-mode footer {
+    background-color: #111;
+    color: #aaa;
+}
+
+/* ICONOS REDES */
+body.dark-mode .footer-icons img {
+    filter: brightness(0.9);
+}
+
+/* =================================================
+   🌙 MODO OSCURO DEFINITIVO (SIN CONFLICTOS)
+   ================================================= */
+
+/* BASE */
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* NAVBAR */
+body.dark-mode .navbar {
+    background: rgba(0,0,0,0.95);
+}
+
+body.dark-mode .navbar a {
+    color: #fff;
+}
+
+/* HERO */
+body.dark-mode .hero {
+    background: linear-gradient(#000000cc, #000000cc),
+    url("https://source.unsplash.com/1600x900/?technology") center/cover no-repeat;
+}
+
+/* =========================
+   TARJETAS (RECUADROS)
+   ========================= */
+
+body.dark-mode .card {
+    background: rgba(28, 28, 28, 0.95);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+body.dark-mode .card h3 {
+    color: #ffcc00;
+}
+
+body.dark-mode .card p {
+    color: #ddd;
+}
+
+/* Hover mantiene animación */
+body.dark-mode .card:hover {
+    border-color: #ffcc00;
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* =========================
+   SECCIONES
+   ========================= */
+
+body.dark-mode section {
+    background: transparent;
+}
+
+/* SOBRE */
+body.dark-mode .sobre-contenido,
+body.dark-mode .sobre p {
+    color: #ddd;
+}
+
+body.dark-mode .sobre img {
+    filter: brightness(0.8);
+}
+
+/* CONTACTO */
+body.dark-mode .contacto {
+    background: #000;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #222;
+    color: #fff;
+}
+
+/* SERVICIO DETALLE */
+body.dark-mode .servicio-info {
+    background: #1a1a1a;
+}
+
+body.dark-mode .servicio-info h1 {
+    color: #ffcc00;
+}
+
+body.dark-mode .servicio-info p {
+    color: #ddd;
+}
+
+/* BOTÓN REGRESAR */
+body.dark-mode .btn-regresar {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* FOOTER */
+body.dark-mode footer,
+body.dark-mode .footer-social {
+    background: #000;
+    color: #aaa;
+}
+
+/* ICONOS */
+body.dark-mode .footer-icons img {
+    filter: invert(1) brightness(0.9);
+}
+
+/* ==============================
+   🌙 MODO OSCURO TARJETAS PRODUCTOS
+   ============================== */
+
+body.dark-mode .card {
+    background: #1f1f1f !important;
+    color: #ffffff !important;
+    border: 1px solid #333;
+}
+
+body.dark-mode .card h3 {
+    color: #ffcc00 !important;
+}
+
+body.dark-mode .card p {
+    color: #dddddd !important;
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 12px 30px rgba(255,255,255,0.08);
+}
+
+/* ==============================
+   🖼️ IMÁGENES DENTRO DE CARDS
+   ============================== */
+
+.card-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: none;
+}
+
+.card-img img.img-activa {
+    display: block;
+}
+
+/* BOTONES */
+.img-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.55);
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+    transition: .3s;
+}
+
+.img-btn:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+.img-btn.prev { left: 10px; }
+.img-btn.next { right:10px; }
+
+/* MODO OSCURO */
+.dark-mode .img-btn {
+    background: rgba(255,255,255,0.15);
+}
+/* Zoom al pasar el mouse */
+.galeria-producto img.zoom {
+  transition: transform 0.4s ease;
+  cursor: zoom-in;
+}
+
+.galeria-producto img.zoom:hover {
+  transform: scale(1.2);
+}
+

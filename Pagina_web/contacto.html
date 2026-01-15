@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Evita que la página se recargue
+
+        alert("✔ Hemos recibido tu mensaje, lo revisaremos y corregiremos.");
+
+        form.reset(); // Limpia el formulario
+    });
+});
+</script>
+
+<button id="darkToggle" class="dark-btn">🌙</button>
+
+<nav class="navbar">
+    <div class="logo">TechZone Store</div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <ul id="menuList">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./servicios.html">Productos</a></li>
+        <li><a href="./sobre.html">Sobre Nosotros</a></li>
+        <li><a class="active" href="./contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<section class="contacto">
+    <h2>Contactanos </h2>
+    <p>Completa el siguiente formulario y nos comunicaremos ontigo.</p>
+
+    <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Nuestra Página Profesional</p>
+</footer>
+
+</body>
+</html>
